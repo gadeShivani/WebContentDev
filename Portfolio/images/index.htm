@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="./index_files/tagcanvas.min.js">
+  </script>
+  <script type="text/javascript">
+    window.onload = function() {
+      try {
+        TagCanvas.textColour = "#08fdd8";
+        TagCanvas.animTiming = 'Smooth';
+        TagCanvas.fadeIn = 0;
+        TagCanvas.initial = [0.1, -0.1];
+        TagCanvas.noMouse = true;
+        TagCanvas.noSelect = true;
+        TagCanvas.Start('myCanvas');
+
+      } catch (e) {
+        // something went wrong, hide the canvas container
+        document.getElementById('myCanvasContainer').style.display = 'none';
+      }
+    };
+  </script>
+  <link href="./index_files/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./index_files/csshake.min.css">
+  <link href="./index_files/css" rel="stylesheet">
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+    }
+    /* main page grid */
+
+    .page {
+      display: grid;
+      grid-template-areas: "navigation main main"
+                            "footer footer footer";
+      grid-template-columns: 150px 1fr;
+      grid-template-rows: 1fr
+      80px;
+      min-height: 100vh;
+    }
+    /* grid sections */
+
+    .footer {
+      grid-area: footer;
+      background: #252627;
+    }
+
+    .content {
+      grid-area: main;
+      background: #252627;
+    }
+
+    .navigation {
+      grid-area: navigation;
+      background: #181818;
+      position: static;
+      height: 100%;
+      width: inherit;
+      position: fixed;
+    }
+
+    .navi {
+      list-style-type: none;
+      margin-top: 40%;
+      width: 100%;
+      height:100vh;
+
+    }
+
+    .navi li {
+      color: black;
+      font-size: 20px;
+    }
+
+    .navi li a {
+      text-decoration: none;
+    }
+
+    .content {
+      display: grid;
+      grid-template-areas: "home"
+      "about"
+      "skills"
+      "projects"
+      "contact";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+
+
+    .home {
+      grid-area: home;
+      height:100vh;
+    }
+
+    .about {
+      grid-area: about;
+    }
+
+    .skills {
+      grid-area: skills;
+    }
+
+    .projects {
+      grid-area: projects;
+    }
+
+    .contact {
+      grid-area: contact;
+    }
+
+    .home h1 {
+      width: 100%;
+      text-align: left;
+      padding-left: 10%;
+      margin-top: 30%;
+      color: #07fdd8;
+      margin-bottom: 20px;
+    }
+    .home h3 {
+      width: 100%;
+      text-align: left;
+      padding-left: 10%;
+      color: #07fdd8;
+      margin-bottom: 10px;
+    }
+    .home p {
+      width: 100%;
+      text-align: left;
+      padding-left: 10%;
+      color: #07fdd8;
+      margin-bottom: 10px;
+    }
+    .home .flat-button {
+    color: #08fdd8;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin-left: 10%;
+    border: 1px solid #08fdd8;
+    margin-top: 30%;
+    border-radius: 3px;
+
+}
+.section-header{
+font-family: 'Rubik', sans-serif;
+color: #08fdd8;
+font-size: 1.7em;
+letter-spacing: 4px;
+text-decoration: none;
+padding: 8px 12px;
+margin:0 auto;
+width: 100%;
+text-align: center;
+}
+.canvas{
+  width:80%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.about-content {
+  display: grid;
+  grid-template-areas: "about-text image-me";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+}
+.about-text{
+  grid-area:about-text;
+  padding:20px;
+  color:#08fdd8;
+
+}
+.image-me{
+  grid-area:image-me;
+
+}
+/* .image-me img {
+  width:80%;
+  margin-left: 10%;
+} */
+.projects{
+display: grid;
+grid-template-areas: "phead phead "
+"project1 project2";
+grid-template-columns: 1fr
+1fr;
+
+}
+.project1 {
+grid-area: project1;
+padding: 10px;
+
+
+}
+.project2 {
+grid-area: project2;
+padding: 10px;
+
+}
+.projects img{
+width: 100%;
+
+}
+.projects h4{
+  font-family: 'Rubik', sans-serif;
+  color: #08fdd8;
+  font-size: 1.2em;
+  letter-spacing: 4px;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin:0 auto;
+  width: 100%;
+  text-align: center;
+
+}
+
+
+
+
+
+    /* for mobile */
+
+    @media screen and (max-width: 767px) {
+      .page {
+        grid-template-areas: "navigation"
+        "main"
+         "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: 50px
+        1fr
+        30px;
+      }
+      .about-content {
+        display: grid;
+        grid-template-areas: "about-text"
+        "image-me";
+        grid-template-columns: 1fr;
+      }
+      .about-text{
+        grid-area:about-text;
+        padding:20px;
+        color:#08fdd8;
+
+      }
+      .image-me{
+        grid-area:image-me;
+        height:auto;
+        margin: 0 auto;
+      }
+      .projects{
+      display: grid;
+      grid-template-areas: "phead"
+      "project1 "
+      "project2";
+      grid-template-rows: 1fr;
+
+      }
+      .project1 {
+      grid-area: project1;
+
+      }
+      .project2 {
+      grid-area: project2;
+
+      }
+
+    }
+
+  </style>
+</head>
+
+<body class="page">
+  <div class="content">
+    <div id="home" class="home">
+      <h1 class="shake-slow shake-slow--hover">Hi,</h1>
+      <h3 class="shake-slow shake-slow--hover">I am Shivani.</h3>
+      <p class="shake-slow shake-slow--hover">Web Developer | Backend Developer | Volante Developer</p>
+      <a rel="contact" href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html#contact" class="flat-button">CONTACT ME</a>
+    </div>
+
+    <div id="about" class="about">
+      <h1 class="section-header">About me</h1>
+      <div class="about-content">
+        <p class="about-text">
+          Currently pursuing Master of Science in Computer Science from Pace University. Previously worked at iNautix Technologies, a BNY Mellon company as an Application Developer for 2.8 years in enterprise application development of Java, J2EE technologies, Volante, Spring, RESTFUL Web Services, IBM WebSphere and AngularJS. Experienced in product development and working in agile environment.
+          Currently I am looking for internships for Summer 2018.
+        </p>
+        <div class="image-me">
+        <img src="./index_files/me.jpg"></div>
+    </div>
+    </div>
+
+    <div id="projects" class="projects">
+      <div class="phead">
+      <h1>Projects</h1>
+    </div>
+
+      <div class="project1">
+        <h4>Periodic Table</h4>
+        <img src="./index_files/PeriodicTable.jpg">
+      </div>
+      <div class="project2">
+        <h4>Movie List</h4>
+        <img src="./index_files/MoviePage.jpg">
+      </div>
+    </div>
+
+    <div id="skills" class="skills">
+      <h1 class="section-header">Skills</h1>
+
+      <div id="myCanvasContainer">
+        <canvas width="500" height="500" id="myCanvas" class="canvas">
+          <p>Anything in here will be replaced on browsers that support the canvas element</p>
+          <ul>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Java</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">J2EE</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Python</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">C</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">C++</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">HTML</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">CSS</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">JavaScript</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">AJAX</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Web Services</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">JSP</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Servlet</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">JSON</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">API Development</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">PublishSubscribe Models</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Windows</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Linux</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">UNIX</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Oracle 11g</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">SQL Server</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Spring</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Camel</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">AngularJS</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Git</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Harvest SCM</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Consul.io</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">zookeeper</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Jira</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Confluence</a></li>
+            <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html">Agile Methodologies</a></li>
+
+          </ul>
+        </canvas>
+      </div>
+    </div>
+    <div id="contact" class="contact">contact info</div>
+  </div>
+  <aside class="navigation">
+    <ul class="navi">
+      <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html#home"><i class="fas fa-home"></i><em class="nav-text">HOME</em></a></li>
+      <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html#about"><i class="fas fa-user"></i><em class="nav-text">about</em></a></li>
+      <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html#projects"><i class="fas fa-briefcase"></i><em class="nav-text">projects</em></a></li>
+      <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html#skills"><i class="fas fa-wrench"></i><em class="nav-text">skills</em></a></li>
+      <li><a href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html#contact"><i class="fas fa-phone-volume"></i><em class="nav-text">contact</em></a></li>
+    </ul>
+  </aside>
+  <footer class="footer">made with love by shivani</footer>
+
+
+
+
+</body></html>

@@ -1,0 +1,61 @@
+<html>
+
+<head>
+  <title>HTML Grid</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+img {
+  border-radius: 50%;
+  box-shadow: 20%;
+  box-shadow: 5px 5px 5px #ccc;
+			-moz-box-shadow: 5px 5px 5px #ccc;
+			-webkit-box-shadow: 5px 5px 5px #ccc;
+			-khtml-box-shadow: 5px 5px 5px #ccc;
+}
+
+
+.main > div {
+    box-shadow: 2px;
+    border-radius: 5px;
+    background-color: grey;
+    padding: 1em;
+
+}
+.main {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: 200px;
+  grid-template-areas:
+    ". a a ."
+    ". a a .";
+    padding-top: 12%;
+}
+.sub {
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+}
+
+  </style>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+</head>
+
+<body>
+
+<div class="main">
+ <div class="sub">
+<img src="images/new-york-wallpapers-new-york-hd-images-america-financial-district-amazing-city-widescreen-sky-nyc-view-2247x1591.jpg" alt="Avatar" style="width:200px">
+ </div>
+</div>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <title>Class work</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .Slides {
+      display: none;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript">
+  function javaBut(){
+         if(navigator.geolocation){
+             navigator.geolocation.getCurrentPosition(function(position){
+                 var positionInfo = "Your current position is (" + "Latitude: " + position.coords.latitude + ", " + "Longitude: " + position.coords.longitude + ")";
+                 document.getElementById("but").innerHTML = positionInfo;
+                 //window.navigator.vibrate(200);
+             });
+         } else{
+             alert("Sorry, your browser does not support HTML5 geolocation.");
+         }
+     }
+
+function handleMotionEvent(event) {
+
+    var x = event.accelerationIncludingGravity.x;
+    var y = event.accelerationIncludingGravity.y;
+    var z = event.accelerationIncludingGravity.z;
+
+    alert("x:"+x+"y:"+y+"z:"+z);
+}
+
+window.addEventListener("devicemotion", handleMotionEvent, true);
+
+//var acceleration = instanceOfDeviceMotionEvent.accelerationIncludingGravity;
+//document.getElementById("but1").innerHTML = acceleration;
+  </script>
+</head>
+</head>
+
+<body>
+  <button id="but" onclick="javaBut()">click me!</button>
+
+  <button id="but1" >click me2!</button>
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+html {
+  background: url(images/70226316-circuit-wallpapers.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+img {
+    width:100%;
+    max-width: 100%;
+    height: 280px;
+}
+
+
+h1 {
+  color:grey;
+  text-align: center;
+  text-shadow: 2px 2px #b3ffb3;
+  padding:20px;
+}
+p {
+  text-align: center;
+  font-family: verdana;
+  font-size: 20px;
+}
+
+.row{
+  background-color: grey;
+  width: 100%;
+  border: 1px dashed black;
+  font-style: italic;
+}
+
+
+.flipcard {
+  position:inherit;
+  float:left;
+  width: 28%;
+  height: 300px;
+  perspective: 800px;
+  margin: 2%;
+}
+.flipcard.v:hover .front,.flipcard.v.flip .front{
+  transform: rotateX(180deg);
+}
+.flipcard.v:hover .back, .flipcard.v.flip .back{
+  transform: rotateX(0deg);
+}
+.flipcard.v .back{
+  transform: rotateX(-180deg);
+}
+.flipcard.h:hover .front,.flipcard.h.flip .front{
+  transform: rotateY(180deg);
+}
+.flipcard.h:hover .back,.flipcard.h.flip .back{
+  transform: rotateY(0deg);
+}
+.flipcard.h .back{
+  transform: rotateY(-180deg);
+}
+.flipcard .front,.flipcard .back
+{
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in;
+  color: white;
+  background: #4ab5ef;
+  padding: 10px;
+  backface-visibility: hidden;
+}
+
+.button {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 20px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.button:after {
+    content: "";
+    background: #90EE90;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.desc{
+  font-size: .9rem;
+  padding: 20px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+
+  .flipcard {
+    position:inherit;
+    width: 100%;
+    height: 300px;
+    perspective: 800px;
+    display: grid;
+    grid-template-columns: auto;
+    padding-bottom: 50px;
+    margin: 2% 0px 0px 0px;
+
+
+
+  }
+  img{
+    display: block;
+    width:300px;
+    max-width:300px;
+    margin:0 auto;
+  }
+}

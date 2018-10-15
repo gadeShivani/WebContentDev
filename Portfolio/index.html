@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script type="text/javascript" src="js/tagcanvas.min.js">
+  </script>
+  <script type="text/javascript">
+    window.onload = function() {
+      try {
+        TagCanvas.textColour = "#08fdd8";
+        TagCanvas.animTiming = 'Smooth';
+        TagCanvas.fadeIn = 0;
+        TagCanvas.initial = [0.1, -0.1];
+        TagCanvas.noMouse = true;
+        TagCanvas.noSelect = true;
+        TagCanvas.Start('myCanvas');
+
+      } catch (e) {
+        // something went wrong, hide the canvas container
+        document.getElementById('myCanvasContainer').style.display = 'none';
+      }
+    };
+  </script>
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://csshake.surge.sh/csshake.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+    }
+    /* main page grid */
+
+    .page {
+      display: grid;
+      grid-template-areas: "navigation main main"
+                            "footer footer footer";
+      grid-template-columns: 150px 1fr;
+      grid-template-rows: 1fr
+      80px;
+      min-height: 100vh;
+    }
+    /* grid sections */
+
+    .footer {
+      grid-area: footer;
+      background: #181818;
+      text-align: center;
+    }
+
+    .content {
+      grid-area: main;
+      background: #252627;
+    }
+
+    .navigation {
+      grid-area: navigation;
+      background: #181818;
+      height: 100%;
+      /* position: fixed; */
+      padding-top:20%;
+    }
+
+    .navi {
+      list-style-type: none;
+      height:100vh;
+      position: fixed;
+      top:30%;
+
+    }
+
+    .navi li {
+      color: black;
+      font-size: 20px;
+      width:inherit;
+      padding-top:10px;
+      padding-bottom: 10px;
+    }
+
+    .navi li a {
+      text-decoration: none;
+      color:#07fdd8;
+    }
+    .navi li a i{
+      padding-right: 5px;
+    }
+
+
+    .content {
+      display: grid;
+      grid-template-areas: "home"
+      "about"
+      "skills"
+      "projects"
+      "contact";
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+    }
+
+
+
+    .home {
+      grid-area: home;
+      height:100vh;
+    }
+
+    .about {
+      grid-area: about;
+    }
+
+    .skills {
+      grid-area: skills;
+    }
+
+    .projects {
+      grid-area: projects;
+    }
+
+    .contact {
+      grid-area: contact;
+    }
+
+    .home h1 {
+      width: 100%;
+      text-align: left;
+      padding-left: 10%;
+      margin-top: 30%;
+      color: #07fdd8;
+      margin-bottom: 20px;
+    }
+    .home h3 {
+      width: 100%;
+      text-align: left;
+      padding-left: 10%;
+      color: #07fdd8;
+      margin-bottom: 10px;
+    }
+    .home p {
+      width: 100%;
+      text-align: left;
+      padding-left: 10%;
+      color: #07fdd8;
+      margin-bottom: 10px;
+    }
+    .home .flat-button {
+    color: #08fdd8;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-family: "Open Sans", sans-serif;
+    text-decoration: none;
+    padding: 8px 12px;
+    margin-left: 10%;
+    border: 1px solid #08fdd8;
+    margin-top: 30%;
+    border-radius: 3px;
+
+}
+.section-header{
+font-family: 'Rubik', sans-serif;
+color: #08fdd8;
+font-size: 1.7em;
+letter-spacing: 4px;
+text-decoration: none;
+padding: 8px 12px;
+margin:0 auto;
+width: 100%;
+text-align: center;
+}
+.canvas{
+  width:80%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.about-content {
+  display: grid;
+  grid-template-areas: "about-text image-me";
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+}
+.about-text{
+  grid-area:about-text;
+  padding:20px;
+  color:#08fdd8;
+
+}
+.image-me{
+  grid-area:image-me;
+
+}
+/* .image-me img {
+  width:80%;
+  margin-left: 10%;
+} */
+.projects{
+display: grid;
+grid-template-areas: "phead phead"
+                     "project1 project2";
+grid-template-columns: auto
+                       auto auto;
+
+}
+
+.project1 {
+grid-area: project1;
+padding: 10px;
+
+
+}
+.project2 {
+grid-area: project2;
+padding: 10px;
+
+}
+.projects img{
+width: 100%;
+
+}
+.projects h4{
+  font-family: 'Rubik', sans-serif;
+  color: #08fdd8;
+  font-size: 1.2em;
+  letter-spacing: 4px;
+  text-decoration: none;
+  padding: 8px 12px;
+  margin:0 auto;
+  width: 100%;
+  text-align: center;
+
+}
+.projects .phead h1{
+text-align: center;
+color: #08fdd8;
+
+}
+.projects .phead{
+width: 100%;
+}
+
+.contact-info{
+text-align: center;
+color: #08fdd8;
+padding-bottom: 10%;
+
+}
+
+
+
+    /* for mobile */
+
+    @media screen and (max-width: 900px) {
+      * {
+        padding: 0px;
+        margin: 0px;
+        text-align: center;
+      }
+      .navigation {
+        background: #181818;
+        /* position: fixed; */
+        padding-top:3%;
+      }
+
+      #home-text,#ab-text,#pro-text,#skills-text,#contact-text{display: none}
+      .navi  {
+        width: 100%;
+        list-style-type: none;
+        height:auto;
+        position: inherit;
+        margin-left: auto;
+      }
+      .navi li {
+        display: inline;
+        width: 20%;
+      }
+      .page {
+        grid-template-areas: "navigation"
+        "main"
+         "footer";
+        grid-template-columns: 100%;
+        grid-template-rows: 30px
+        1fr
+        30px;
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-areas: "about-text"
+        "image-me";
+        grid-template-columns: 1fr;
+      }
+      .about-text{
+        grid-area:about-text;
+        padding:20px;
+        color:#08fdd8;
+
+      }
+      .image-me{
+        grid-area:image-me;
+        height:auto;
+        margin: 0 auto;
+      }
+      .projects{
+      display: grid;
+      grid-template-areas: "phead"
+      "project1 "
+      "project2";
+      grid-template-rows: 1fr;
+
+      }
+      .project1 {
+      grid-area: project1;
+
+      }
+      .project2 {
+      grid-area: project2;
+
+      }
+
+    }
+
+  </style>
+</head>
+
+<body class="page">
+  <div class="content">
+    <div id="home" class="home">
+      <h1 class="shake-slow shake-slow--hover">Hi,</h1>
+      <h3 class="shake-slow shake-slow--hover">I am Shivani.</h3>
+      <p class="shake-slow shake-slow--hover">Web Developer | Backend Developer | Volante Developer</p>
+      <a rel="contact" href="file:///Users/shivani/Desktop/WebContentDev/Portfolio/index.html#contact" class="flat-button">CONTACT ME</a>
+    </div>
+
+    <div id="about" class="about">
+      <h1 class="section-header">About me</h1>
+      <div class="about-content">
+        <p class="about-text">
+          Currently pursuing Master of Science in Computer Science from Pace University. Previously worked at iNautix Technologies, a BNY Mellon company as an Application Developer for 2.8 years in enterprise application development of Java, J2EE technologies, Volante, Spring, RESTFUL Web Services, IBM WebSphere and AngularJS. Experienced in product development and working in agile environment.
+          Currently I am looking for internships for Summer 2018.
+        </p>
+        <div class="image-me">
+        <img src="images/me.jpg"/></div>
+    </div>
+    </div>
+
+    <div id="projects" class="projects">
+      <div class="phead">
+      <h1 >Projects</h1>
+    </div>
+
+      <div class="project1">
+        <h4>Periodic Table</h4>
+        <img src="images/PeriodicTable.jpg"/>
+      </div>
+      <div class="project2">
+        <h4>Movie List</h4>
+        <img src="images/MoviePage.jpg"/>
+      </div>
+    </div>
+
+    <div id="skills" class="skills">
+      <h1 class="section-header">Skills</h1>
+
+      <div id="myCanvasContainer">
+        <canvas width="500" height="500" id="myCanvas" class='canvas'>
+          <p>Anything in here will be replaced on browsers that support the canvas element</p>
+          <ul>
+            <li><a href="">Java</a></li>
+            <li><a href="">J2EE</a></li>
+            <li><a href="">Python</a></li>
+            <li><a href="">C</a></li>
+            <li><a href="">C++</a></li>
+            <li><a href="">HTML</a></li>
+            <li><a href="">CSS</a></li>
+            <li><a href="">JavaScript</a></li>
+            <li><a href="">AJAX</a></li>
+            <li><a href="">Web Services</a></li>
+            <li><a href="">JSP</a></li>
+            <li><a href="">Servlet</a></li>
+            <li><a href="">JSON</a></li>
+            <li><a href="">API Development</a></li>
+            <li><a href="">PublishSubscribe Models</a></li>
+            <li><a href="">Windows</a></li>
+            <li><a href="">Linux</a></li>
+            <li><a href="">UNIX</a></li>
+            <li><a href="">Oracle 11g</a></li>
+            <li><a href="">SQL Server</a></li>
+            <li><a href="">Spring</a></li>
+            <li><a href="">Camel</a></li>
+            <li><a href="">AngularJS</a></li>
+            <li><a href="">Git</a></li>
+            <li><a href="">Harvest SCM</a></li>
+            <li><a href="">Consul.io</a></li>
+            <li><a href="">zookeeper</a></li>
+            <li><a href="">Jira</a></li>
+            <li><a href="">Confluence</a></li>
+            <li><a href="">Agile Methodologies</a></li>
+
+          </ul>
+        </canvas>
+      </div>
+    </div>
+    <div id="contact" class="contact">
+      <h1 class="section-header">contact info</h1>
+    <p class="contact-info">
+      Email ID: gadeshivani@gmail.com
+      LinkedIn Profile:www.linkedin.com/in/shivanigade
+
+
+    </p>
+</div>
+  </div>
+  <div class="navigation">
+    <ul class='navi'>
+      <li><a href="#home"><i class="fas fa-home"></i><em id='home-text'>HOME</em></a></li>
+      <li><a href="#about"><i class="fas fa-user"></i><em id='ab-text'>about</em></a></li>
+      <li><a href="#projects"><i class="fas fa-briefcase"></i><em id='pro-text'>projects</em></a></li>
+      <li><a href="#skills"><i class="fas fa-wrench"></i><em id='skills-text'>skills</em></a></li>
+      <li><a href="#contact"><i class="fas fa-phone-volume"></i><em id='contact-text'>contact</em></a></li>
+    </ul>
+  </div>
+
+</body>
+<footer class="footer">gadeshivani@gmail.com</footer>
+
+</html>
